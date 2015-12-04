@@ -1,0 +1,11 @@
+
+array1 = [1,2,3,4,5]
+array2 =[1,1,2,2,5,5,8,]
+
+def find_duplicates(a, b)
+	m = b.group_by{ |e| e }.select { |k, v| v.size > 1 }.map(&:first)
+      c = (a + b).uniq! - m
+      puts c
+ end
+
+find_duplicates(array1, array2) 	
